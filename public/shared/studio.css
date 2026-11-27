@@ -27,7 +27,10 @@
   --tool-model: #046656; --tool-model-2: #8da93f; --tool-model-3: #d8b73c;
   --tool-vsm: #222b52;
 
-  /* Type. Body faces stay per tool (Business Model: Fira Sans; VSM: Open Sans) until Panos picks one. */
+  /* Type (agreed Nov 27 2026). Fira Sans is the one body face. Raleway is for display only:
+     15px and up, weight 600 or more, always with lining figures (see the rule below).
+     Fira Sans Condensed only where space forces it, such as the canvas sheet; no tracked capitals. */
+  --f-body: 'Fira Sans', system-ui, sans-serif;
   --f-display: Raleway, 'Segoe UI', system-ui, sans-serif;
   --f-wordmark: Comfortaa, Raleway, sans-serif;
   --f-label: 'Fira Sans Condensed', 'Arial Narrow', system-ui, sans-serif;
@@ -57,6 +60,11 @@
 .ctl svg { width: 30px; height: 30px; }
 .ctl .arc, .ctl .arc-c { fill: none; stroke: currentColor; stroke-linecap: round; }
 .ctl .arc { stroke-width: 29; stroke-dasharray: 325.6 34.4; } .ctl .arc-c { stroke-width: 37.4; stroke-dasharray: 304.7 55.3; } .ctl .dot { fill: var(--ctl-gold); }
+/* Raleway's default figures are old-style (a 1 that looks like an I). Headings and .f-display get
+   lining figures. font-feature-settings is set as well because a later `font:` shorthand resets
+   font-variant-numeric but not font-feature-settings. */
+h1, h2, h3, h4, .f-display { font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1; }
+
 .ctl .wm { font: 500 17px/1 var(--f-wordmark); letter-spacing: .02em; }
 
 /* Interface glyphs from icons.svg: <svg class="ico"><use href="/shared/icons.svg#i-plus"/></svg> */

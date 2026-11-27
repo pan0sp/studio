@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&family=Fira+Sans+Condensed:wght@500;600&family=Raleway:wght@600;700;800&family=Comfortaa:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&family=Raleway:wght@600;700;800&family=Comfortaa:wght@500&display=swap">
 <script>
   // Old links to the canvas pointed at the root with a tool in the hash (#purpose): send them on.
   (function () { var h = location.hash.slice(1); if (/^(canvas|purpose|value|needs|numbers|story)$/.test(h)) location.replace('/model/' + h + location.search); })();
@@ -30,7 +30,7 @@
 :root { --navy: var(--ctl-navy); --navy-2: var(--ctl-navy-2); --gold: var(--ctl-gold); --mist: var(--ctl-mist); --env: var(--tool-model); --soc: var(--tool-model-2); --eco: var(--tool-model-3); }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
-body { background: var(--paper); color: var(--ink); font: 400 16px/1.55 'Fira Sans', system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+body { background: var(--paper); color: var(--ink); font: 400 16px/1.55 var(--f-body); -webkit-font-smoothing: antialiased; }
 a { color: inherit; }
 
 .hero { background: var(--navy); color: #f5f4f0; border-bottom: 4px solid var(--gold); position: relative; overflow: hidden; }
@@ -38,11 +38,11 @@ a { color: inherit; }
 .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
 .bar { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
 .bar .ctl { color: #fff; }
-.bar .site { font: 600 12px/1 'Fira Sans Condensed', sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--mist); text-decoration: none; }
+.bar .site { font: 500 14px/1 var(--f-body); color: var(--mist); text-decoration: none; }
 .bar .site:hover { color: #fff; }
 .intro { padding: 56px 0 72px; max-width: 720px; position: relative; z-index: 1; }
-.kicker { font: 700 12px/1 Raleway, sans-serif; letter-spacing: .24em; text-transform: uppercase; color: var(--gold); margin: 0 0 16px; }
-h1 { margin: 0; font: 800 clamp(44px, 8vw, 84px)/.98 Raleway, sans-serif; letter-spacing: -.025em; color: #fff; }
+.kicker { font: 700 17px/1.2 var(--f-display); color: var(--gold); margin: 0 0 16px; }
+h1 { margin: 0; font: 800 clamp(44px, 8vw, 84px)/.98 var(--f-display); letter-spacing: -.025em; color: #fff; }
 .lede { margin: 22px 0 0; font-size: clamp(17px, 2.1vw, 20px); line-height: 1.5; color: #c8cedf; max-width: 600px; }
 
 .tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: -40px; position: relative; z-index: 2; }
@@ -54,16 +54,16 @@ h1 { margin: 0; font: 800 clamp(44px, 8vw, 84px)/.98 Raleway, sans-serif; letter
 .art.vsm { background: var(--navy-2); }
 .art svg { height: 120px; width: auto; overflow: visible; }
 .body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
-.tool h2 { margin: 0; font: 800 28px/1.1 Raleway, sans-serif; letter-spacing: -.01em; }
-.tool .on { font: 600 12px/1.3 'Fira Sans Condensed', sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-2); }
+.tool h2 { margin: 0; font: 800 28px/1.1 var(--f-display); letter-spacing: -.01em; }
+.tool .on { font: 500 14px/1.3 var(--f-body); color: var(--ink-2); }
 .tool p { margin: 0; color: var(--ink-2); font-size: 15px; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
 .chips span { font: 500 12.5px/1 'Fira Sans', sans-serif; padding: 6px 9px; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--line); color: var(--ink); }
-.go { margin-top: auto; padding-top: 8px; font: 700 14px/1 Raleway, sans-serif; letter-spacing: .02em; display: inline-flex; align-items: center; gap: 8px; color: var(--ink); }
+.go { margin-top: auto; padding-top: 8px; font: 700 15px/1 var(--f-display); letter-spacing: .02em; display: inline-flex; align-items: center; gap: 8px; color: var(--ink); }
 .go svg { transition: transform .2s; } .tool:hover .go svg { transform: translateX(4px); }
 
 .about { display: grid; grid-template-columns: 1fr 1.4fr; gap: 32px; padding: 72px 0 40px; align-items: start; }
-.about h3 { margin: 0; font: 800 26px/1.15 Raleway, sans-serif; letter-spacing: -.01em; }
+.about h3 { margin: 0; font: 800 26px/1.15 var(--f-display); letter-spacing: -.01em; }
 .about p { margin: 0 0 12px; color: var(--ink-2); }
 .about a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--gold); }
 footer { border-top: 1px solid var(--line); padding: 20px 0 32px; font-size: 13px; color: var(--ink-2); display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
@@ -85,7 +85,7 @@ footer { border-top: 1px solid var(--line); padding: 20px 0 32px; font-size: 13p
       <a class="site" href="https://closetheloop.gr" target="_blank" rel="noopener">closetheloop.gr</a>
     </div>
     <div class="intro">
-      <p class="kicker">Tools for flourishing enterprises</p>
+      <p class="kicker f-display">Tools for flourishing enterprises</p>
       <h1>Close the Loop Studio</h1>
       <p class="lede">Interactive tools for designing enterprises that flourish: socially beneficial, environmentally regenerative and financially viable. For classrooms, workshops and consulting.</p>
     </div>
@@ -103,7 +103,7 @@ footer { border-top: 1px solid var(--line); padding: 20px 0 32px; font-size: 13p
         <h2>Business Model</h2>
         <p>Design and test a business model on Antony Upward's Flourishing Business Canvas, or start from the nine blocks of the Business Model Canvas. Stickies, links, numbers and a story to present.</p>
         <div class="chips"><span>Canvas</span><span>Purpose</span><span>Value</span><span>Needs</span><span>Numbers</span><span>Story</span></div>
-        <span class="go">Open Business Model <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        <span class="go f-display">Open Business Model <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </div>
     </a>
     <a class="tool" href="/vsm/">
@@ -120,7 +120,7 @@ footer { border-top: 1px solid var(--line); padding: 20px 0 32px; font-size: 13p
         <h2>Viable System Explorer</h2>
         <p>Map an organisation with the Viable System Model: the classic diagram in 2D, a 3D model and the Orthogonal view, with the value network it serves.</p>
         <div class="chips"><span>2D</span><span>3D</span><span>Orthogonal</span><span>Value network</span></div>
-        <span class="go">Open the explorer <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+        <span class="go f-display">Open the explorer <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
       </div>
     </a>
   </section>
