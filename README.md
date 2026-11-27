@@ -19,7 +19,7 @@ Old addresses answer with a permanent 301 from Cloudflare Redirect Rules on the 
 - `public/index.html`: the home page. Static.
 - `public/shared/studio.css`: the shared design tokens (Close the Loop navy and gold for the chrome, state colours, type roles, tool identities) and the Close the Loop lockup. The home page links it. Tools copy the tokens they need into their own single-file builds rather than linking it, because each tool must keep working as a Claude artifact or opened from disk.
 - `public/shared/icons.svg`: the interface glyphs as an SVG sprite (24 x 24, stroke only, 1.8 wide, round caps and joins), from Business Model.
-- `public/share/`: images for link previews.
+- `public/share/`: images for link previews (the studio's and Business Model's), drawn by `node share.js` (needs Playwright; run it only when a card's wording or look changes, the PNGs are committed).
 - `worker.mjs`: runs only for tool paths (`assets.run_worker_first`) and hands each to its Worker through a service binding. Everything else is a static file.
 - `wrangler.jsonc`: the Worker `studio`, its assets and bindings.
 
