@@ -21,6 +21,9 @@
   --paper: #f5f4f0; --paper-2: #eceef3; --card: #ffffff;
   --ink: #141b38; --ink-2: #545c7a; --line: rgba(20, 27, 56, .12);
   --link-ink: var(--ctl-gold-ink);
+  /* Panels: the side panel, menus, dialogs and every working card on the wall, in every view of every tool.
+     In dark they sit at #1f2748 with a faint light edge, so they never melt into the black wall (agreed Nov 27 2026). */
+  --panel: #fbfbf8; --panel-2: #eceef3; --panel-ink-2: #545c7a; --panel-line: rgba(20, 27, 56, .14); --panel-edge: 0 0 0 0 transparent;
   --shadow: 0 1px 2px rgba(20, 27, 56, .08), 0 18px 40px -20px rgba(20, 27, 56, .35);
 
   /* State, shared by every tool */
@@ -46,7 +49,8 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --wall: #000; --wall-dot: rgba(236, 235, 228, .07);
-    --paper: #0d1226; --paper-2: #131a33; --card: #161d3a; --ink: #eef0f7; --ink-2: #a3abc6; --line: rgba(238, 240, 247, .12);
+    --paper: #0d1226; --paper-2: #131a33; --card: #1f2748; --ink: #eef0f7; --ink-2: #b7bed6; --line: #3d4775;
+    --panel: #1f2748; --panel-2: #2a3359; --panel-ink-2: #b7bed6; --panel-line: #3d4775; --panel-edge: 0 0 0 1px rgba(236, 235, 228, .1);
     --link-ink: var(--ctl-gold); --chrome: #10152c; --chrome-2: #1c2446;
     --good: #4cba72; --warn: #e0a341; --bad: #f0705a;
     --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 18px 40px -20px rgba(0, 0, 0, .8); color-scheme: dark;
@@ -54,7 +58,8 @@
 }
 :root[data-theme="dark"] {
   --wall: #000; --wall-dot: rgba(236, 235, 228, .07);
-  --paper: #0d1226; --paper-2: #131a33; --card: #161d3a; --ink: #eef0f7; --ink-2: #a3abc6; --line: rgba(238, 240, 247, .12);
+  --paper: #0d1226; --paper-2: #131a33; --card: #1f2748; --ink: #eef0f7; --ink-2: #b7bed6; --line: #3d4775;
+    --panel: #1f2748; --panel-2: #2a3359; --panel-ink-2: #b7bed6; --panel-line: #3d4775; --panel-edge: 0 0 0 1px rgba(236, 235, 228, .1);
   --link-ink: var(--ctl-gold); --chrome: #10152c; --chrome-2: #1c2446;
   --good: #4cba72; --warn: #e0a341; --bad: #f0705a;
   --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 18px 40px -20px rgba(0, 0, 0, .8); color-scheme: dark;
