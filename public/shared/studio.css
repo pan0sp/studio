@@ -15,6 +15,9 @@
   --chrome-line: rgba(245, 244, 240, .14); --accent: var(--ctl-gold);
 
   /* Page and panels */
+  /* The wall every tool works on (agreed Nov 27 2026): grey with a dot grid in light, plain black in dark.
+     Draw it as: background: var(--wall) radial-gradient(var(--wall-dot) 1px, transparent 1.3px) 0 0 / 16px 16px; */
+  --wall: #e5e7ed; --wall-dot: rgba(20, 27, 56, .1);
   --paper: #f5f4f0; --paper-2: #eceef3; --card: #ffffff;
   --ink: #141b38; --ink-2: #545c7a; --line: rgba(20, 27, 56, .12);
   --link-ink: var(--ctl-gold-ink);
@@ -42,6 +45,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    --wall: #000; --wall-dot: rgba(236, 235, 228, .07);
     --paper: #0d1226; --paper-2: #131a33; --card: #161d3a; --ink: #eef0f7; --ink-2: #a3abc6; --line: rgba(238, 240, 247, .12);
     --link-ink: var(--ctl-gold); --chrome: #10152c; --chrome-2: #1c2446;
     --good: #4cba72; --warn: #e0a341; --bad: #f0705a;
@@ -49,6 +53,7 @@
   }
 }
 :root[data-theme="dark"] {
+  --wall: #000; --wall-dot: rgba(236, 235, 228, .07);
   --paper: #0d1226; --paper-2: #131a33; --card: #161d3a; --ink: #eef0f7; --ink-2: #a3abc6; --line: rgba(238, 240, 247, .12);
   --link-ink: var(--ctl-gold); --chrome: #10152c; --chrome-2: #1c2446;
   --good: #4cba72; --warn: #e0a341; --bad: #f0705a;
