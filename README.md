@@ -49,9 +49,9 @@ Runs the router locally with stand-ins for the tool Workers and checks the home 
 
 Cloudflare Workers Builds deploys `main` as the Worker `studio`. Merging to `main` is publishing. Branches get Preview URLs.
 
-## Cutover (once, November 2026)
+## Cutover (done Nov 27 2026; kept for the record)
 
-Until the cutover, the Worker `fbc` holds `studio.closetheloop.gr` and serves this home page from its own repository. The order matters, because a custom domain can belong to one Worker only:
+Before the cutover, the Worker `fbc` held `studio.closetheloop.gr` and served this home page from its own repository. The order mattered, because a custom domain can belong to one Worker only:
 
 1. Connect this repository to Workers Builds (Workers & Pages, Create, Import a repository). The first build creates the Worker `studio`. Check it on its workers.dev address: home page, `/model/`, `/vsm/`.
 2. In the Worker `fbc`, Settings, Domains & Routes: remove `studio.closetheloop.gr`. Leave `fbc.closetheloop.gr`.

@@ -16,9 +16,8 @@
     { "binding": "MODEL", "service": "fbc" },
     { "binding": "VSM", "service": "vsm" }
   ],
-  // The custom domain moves here from the Worker `fbc` at cutover (see README, "Cutover").
-  // Until then this Worker is reachable only on its workers.dev and Preview URLs.
-  // "routes": [{ "pattern": "studio.closetheloop.gr", "custom_domain": true }],
+  // studio.closetheloop.gr moved here from the Worker `fbc` on Nov 27 2026 (README, "Cutover").
+  "routes": [{ "pattern": "studio.closetheloop.gr", "custom_domain": true }],
   // the connected build runs `wrangler preview` on branches, which needs this block, even empty
   "previews": {}
 }
