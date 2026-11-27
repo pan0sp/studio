@@ -1,0 +1,63 @@
+/* Close the Loop Studio: shared design tokens.
+   One source for the studio's look: the home page links this file, and each tool copies the
+   tokens it needs into its own single-file build (tools must keep working as a Claude artifact
+   or opened from disk, so they never fetch this file at run time).
+   Brand: Close the Loop (skill close-the-loop-design in pan0sp/skills). The frame, chrome and
+   panels are CTL navy with a sparing gold; each tool keeps its own subject colours inside it
+   (the canvas greens in Business Model, the model colours in the VSM explorer). */
+:root {
+  /* Close the Loop brand */
+  --ctl-navy: #141b38; --ctl-navy-2: #222b52; --ctl-gold: #eeba2b; --ctl-gold-ink: #a07a0e;
+  --ctl-cream: #f5f4f0; --ctl-mist: #aab3cf;
+
+  /* Chrome: rails, headers, menus, docks, the welcome and About heroes */
+  --chrome: var(--ctl-navy); --chrome-2: var(--ctl-navy-2); --chrome-ink: var(--ctl-cream); --chrome-ink-2: var(--ctl-mist);
+  --chrome-line: rgba(245, 244, 240, .14); --accent: var(--ctl-gold);
+
+  /* Page and panels */
+  --paper: #f5f4f0; --paper-2: #eceef3; --card: #ffffff;
+  --ink: #141b38; --ink-2: #545c7a; --line: rgba(20, 27, 56, .12);
+  --link-ink: var(--ctl-gold-ink);
+  --shadow: 0 1px 2px rgba(20, 27, 56, .08), 0 18px 40px -20px rgba(20, 27, 56, .35);
+
+  /* State, shared by every tool */
+  --good: #2c8a4b; --warn: #b9770e; --bad: #c8402b;
+
+  /* Tool identities (cards on the home page, tool marks) */
+  --tool-model: #046656; --tool-model-2: #8da93f; --tool-model-3: #d8b73c;
+  --tool-vsm: #222b52;
+
+  /* Type. Body faces stay per tool (Business Model: Fira Sans; VSM: Open Sans) until Panos picks one. */
+  --f-display: Raleway, 'Segoe UI', system-ui, sans-serif;
+  --f-wordmark: Comfortaa, Raleway, sans-serif;
+  --f-label: 'Fira Sans Condensed', 'Arial Narrow', system-ui, sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  /* Shape */
+  --r-card: 14px; --r: 10px; --r-chip: 999px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0d1226; --paper-2: #131a33; --card: #161d3a; --ink: #eef0f7; --ink-2: #a3abc6; --line: rgba(238, 240, 247, .12);
+    --link-ink: var(--ctl-gold); --chrome: #10152c; --chrome-2: #1c2446;
+    --good: #4cba72; --warn: #e0a341; --bad: #f0705a;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 18px 40px -20px rgba(0, 0, 0, .8); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0d1226; --paper-2: #131a33; --card: #161d3a; --ink: #eef0f7; --ink-2: #a3abc6; --line: rgba(238, 240, 247, .12);
+  --link-ink: var(--ctl-gold); --chrome: #10152c; --chrome-2: #1c2446;
+  --good: #4cba72; --warn: #e0a341; --bad: #f0705a;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .5), 0 18px 40px -20px rgba(0, 0, 0, .8); color-scheme: dark;
+}
+
+/* The Close the Loop lockup: <a class="ctl"><svg viewBox="0 0 800 800">…</svg><span class="wm">close the loop</span></a> */
+.ctl { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+.ctl svg { width: 30px; height: 30px; }
+.ctl .arc, .ctl .arc-c { fill: none; stroke: currentColor; stroke-linecap: round; }
+.ctl .arc { stroke-width: 29; stroke-dasharray: 325.6 34.4; } .ctl .arc-c { stroke-width: 37.4; stroke-dasharray: 304.7 55.3; } .ctl .dot { fill: var(--ctl-gold); }
+.ctl .wm { font: 500 17px/1 var(--f-wordmark); letter-spacing: .02em; }
+
+/* Interface glyphs from icons.svg: <svg class="ico"><use href="/shared/icons.svg#i-plus"/></svg> */
+.ico { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }

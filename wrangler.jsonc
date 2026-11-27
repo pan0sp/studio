@@ -1,0 +1,24 @@
+// Close the Loop Studio. Cloudflare Workers Builds deploys `main` as the Worker `studio`.
+// public/ is the site (home page, shared/ tokens and icons, share/ images); worker.mjs routes tool paths
+// to each tool's own Worker through service bindings. Merging to `main` is publishing.
+{
+  "name": "studio",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-11-01",
+  // branch builds get a Preview URL on workers.dev, so a PR can be tried before it is merged
+  "preview_urls": true,
+  "assets": {
+    "directory": "public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/model*", "/vsm*"]
+  },
+  "services": [
+    { "binding": "MODEL", "service": "fbc" },
+    { "binding": "VSM", "service": "vsm" }
+  ],
+  // The custom domain moves here from the Worker `fbc` at cutover (see README, "Cutover").
+  // Until then this Worker is reachable only on its workers.dev and Preview URLs.
+  // "routes": [{ "pattern": "studio.closetheloop.gr", "custom_domain": true }],
+  // the connected build runs `wrangler preview` on branches, which needs this block, even empty
+  "previews": {}
+}
